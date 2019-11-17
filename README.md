@@ -51,19 +51,25 @@ The Qt installation path (`$HOME/Qt/5.4/clang_64` in this example) depends on yo
 
     $ gem install qml
 
-### Ubuntu
-
-    $ sudo apt install ruby ruby-dev build-essentials qt5-default qtdeclarative5-dev qtbase5-private-dev qml-module-qtquick2 qml-module-qtquick-controls
-    $ sudo gem install qml
-
-### WSL
-
-Using Ubuntu as the linux distro, proceed as above and use either WSL2 or an XServer (e.g. vcxsrv) to show the UI on Windows.
-
 #### Options
 
 * `--with-qmake=[dir]`
   * Qt qmake executable path (optional).
+
+### Ubuntu
+
+The following minimal set of packages is required to install ruby-qml:
+
+    $ sudo apt install ruby ruby-dev build-essentials qt5-default qtdeclarative5-dev qtbase5-private-dev qml-module-qtquick2 qml-module-qtquick-controls 
+    $ sudo gem install qml
+
+Depending on which QML controls you want to use you might want to install additional `qml-modules-` such as `qml-module-qtquick-dialogs`, or just install all available packages:
+
+    $ sudo apt install qml-module-qtquick-*
+
+### WSL
+
+Using Ubuntu as the linux distro, proceed as above and use either WSL2 or an XServer (e.g. vcxsrv) to show the UI on Windows.
 
 ### Use Gemfile
 
